@@ -1,0 +1,122 @@
+Lessons in this video 
+-- What and why of Terraform 
+-- Terminologies 
+-- Basic Structure of terraform statements 
+-- How to use terraform documentations to develop your terraform statements
+-- Basic CLI commands  
+-- Terraform system folders and files 
+
+
+
+Terraform Overview and Keywords
+-- wikipedia - https://en.wikipedia.org/wiki/Terraform_(software)
+-- commercial version available
+
+
+Terminlologies 
+
+-- Interpolation -- Substituting the value of something into another. For example, taking the output of a function and substituting it with a variable which was initially unknown. (We will demonstrate this a lot during the course)
+
+-- Idempotent -- denoting an element of a set which is unchanged in value when multiplied or otherwise operated on by itself.
+
+-- Providers
+
+-- Provisioners 
+
+
+
+
+Why do we need Terraform?
+
+1. IIAC - Infrastructure as code 
+2. Idempotence - 
+
+For example - 
+
+I want 2 ec2 instances (i.e Cloud server in AWS) 
+It must have an elastic ip attached 
+It must be in a public subnet
+I also need a database server based on Amazon RDS
+The RDS instance must be in a private subnet 
+I want to configure my own VPC and security groups to control traffic to my cloud network 
+
+All can be achieved by making statements in code and when applied multiple times, it remains the same (Idempotent)
+
+By the time I am done, I want to be able to save my code in a source code management tool (Infrstructure living in github) and probably set up a DevOps pipeline for Continous integration.
+
+What is the language used by terraform?
+
+HCL Language
+
+
+Terraform Structure
+
+Provider
+Resources
+Variable
+Output
+Modules
+
+What is the Difference between Providers and Provisioners 
+
+
+Can do software provisioning using provisioners
+
+Local-exec  - Run commands on the resource being created 
+Remote-exec - Run scripts on the resource being created 
+Chef - Run chef commands within a resource 
+Puppet - Run puppet commands within a resource 
+File - Copy files from local to resource 
+Ansible - Not yet available as this time - but you can work around using remote-exec - https://www.hashicorp.com/resources/ansible-terraform-better-together
+
+
+Terraform Documentations
+
+-- How to use the documentations
+https://www.terraform.io/docs/
+
+
+Basic Terraform CLI Commands
+
+Terraform init
+Terraform plan
+Terraform refresh
+Terraform validate 
+Terraform output 
+terraform show
+Terraform apply
+terraform graph
+Terraform destroy
+Terraform help 
+
+Some Advanced Terraform CLI Commands
+Terraform init  –backendconfig=“backend-config-file-path”
+Terraform plan –var-file=“varfile” –var=“var_name=var_value”
+Terraform apply –var-file=“varfile” –var=“var_name=var_value”
+
+
+
+Terraform system folders
+.terraform
+
+Terraform system files
+
+terraform.tfstate
+terraform.tfstate.backup
+
+Terraform file extensions
+terraform.tf
+terraform.tfvars
+
+
+Summary 
+
+-- What and why of Terraform - Infrastructure provisioning tool and IIAC
+-- Terminologies to lookout for when working with terraform 
+-- Basic Structure of terraform code 
+-- How to use terraform documentations to develop your terraform statements
+-- Basic CLI commands  
+-- Terraform system folders and files 
+
+
+
